@@ -1,4 +1,7 @@
 3D Models/OldVersions
 History
 /Data/*
+!/Data/libysk-binlog*
+!/Data/undo_*
+!/Data/mysql.ibd
 !/Data/libysk/

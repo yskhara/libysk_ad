@@ -5,7 +5,7 @@ ConnectionString=Provider=MSDASQL.1;Password=p@ssw0rd;Persist Security Info=True
 AddMode=3
 RemoveMode=1
 UpdateMode=2
-ViewMode=0
+ViewMode=1
 LeftQuote=[
 RightQuote=]
 QuoteTableNames=0
@@ -19,7 +19,7 @@ LibrarySearchPath=D:\Personal Files\yusaku\Documents\Altium Designer\Library\lib
 OrcadMultiValueDelimiter=,
 SearchSubDirectories=1
 SchemaName=ALTIUM
-LastFocusedTable=new_table
+LastFocusedTable=resistor_smd
 [Table1]
 SchemaName=
 TableName=new_table
@@ -32,16 +32,16 @@ BrowserOrder_Visible=PartNo0=58|Comment0=72|SymPath0=210|SymRef0=60|FotPath0=221
 [Table2]
 SchemaName=
 TableName=resistor_smd
-Enabled=False
+Enabled=True
 UserWhere=0
 UserWhereText=
 BrowserOrder_Sorting=
 BrowserOrder_Grouping=
-BrowserOrder_Visible=Part Number0=98|Description0=380|Library Ref0=77|Library Path0=217|Footprint Ref0=92|Footprint Path0=228|Resistance0=77|Tolerance0=73|Power Rating0=92|Manufacturer 10=102|Voltage Rating0=100|Case/Package0=93|Component Type0=111|Manufacturer Part Number 10=169|Supplier 10=75|Supplier Part Number 10=142|ComponentLink1 URL0=423|ComponentLink1 Description0=173
+BrowserOrder_Visible=Part Number0=98|Description0=380|Library Ref0=77|Library Path0=217|Footprint Ref0=92|Footprint Path0=228|Resistance0=77|Tolerance0=73|Power Rating0=92|Manufacturer 10=102|Voltage Rating0=100|Case/Package0=93|Component Type0=111|Manufacturer Part Number 10=169|Supplier 10=75|Supplier Part Number 10=142|ComponentLink1 URL0=423|ComponentLink1 Description0=173|Comment0=72
 [Table3]
 SchemaName=
 TableName=resistor_smd_0603
-Enabled=True
+Enabled=False
 UserWhere=0
 UserWhereText=
 BrowserOrder_Sorting=

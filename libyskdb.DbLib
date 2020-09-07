@@ -1,0 +1,85 @@
+[OutputDatabaseLinkFile]
+Version=1.1
+[DatabaseLinks]
+ConnectionString=Provider=MSDASQL.1;Password=p@ssw0rd;Persist Security Info=True;User ID=root;Data Source=MySQL_AD_Library;Initial Catalog=libysk
+AddMode=3
+RemoveMode=1
+UpdateMode=2
+ViewMode=0
+LeftQuote=[
+RightQuote=]
+QuoteTableNames=0
+UseTableSchemaName=0
+DefaultColumnType=VARCHAR(255)
+LibraryDatabaseType=
+LibraryDatabasePath=
+DatabasePathRelative=0
+TopPanelCollapsed=0
+LibrarySearchPath=D:\Personal Files\yusaku\Documents\Altium Designer\Library\libysk
+OrcadMultiValueDelimiter=,
+SearchSubDirectories=1
+SchemaName=ALTIUM
+LastFocusedTable=new_table
+[Table1]
+SchemaName=
+TableName=new_table
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=PartNo0=58|Comment0=72|SymPath0=210|SymRef0=60|FotPath0=221|FotRef0=57
+[Table2]
+SchemaName=
+TableName=resistor_smd
+Enabled=False
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Part Number0=98|Description0=380|Library Ref0=77|Library Path0=217|Footprint Ref0=92|Footprint Path0=228|Resistance0=77|Tolerance0=73|Power Rating0=92|Manufacturer 10=102|Voltage Rating0=100|Case/Package0=93|Component Type0=111|Manufacturer Part Number 10=169|Supplier 10=75|Supplier Part Number 10=142|ComponentLink1 URL0=423|ComponentLink1 Description0=173
+[Table3]
+SchemaName=
+TableName=resistor_smd_0603
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Part Number0=98|Description0=380|Resistance0=77|Tolerance0=73|Power Rating0=92|Library Ref0=77|Library Path0=217|Footprint Ref0=92|Footprint Path0=228|Manufacturer 10=102|Voltage Rating0=100|Case/Package0=93|Component Type0=111|Manufacturer Part Number 10=169|Supplier 10=75|Supplier Part Number 10=142|ComponentLink1 URL0=423|ComponentLink1 Description0=173
+[FieldMap1]
+Options=FieldName=new_table.PartNo|TableNameOnly=new_table|FieldNameOnly=PartNo|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap2]
+Options=FieldName=new_table.Comment|TableNameOnly=new_table|FieldNameOnly=Comment|FieldType=1|ParameterName=Comment|VisibleOnAdd=True|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap3]
+Options=FieldName=new_table.SymPath|TableNameOnly=new_table|FieldNameOnly=SymPath|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap4]
+Options=FieldName=new_table.SymRef|TableNameOnly=new_table|FieldNameOnly=SymRef|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap5]
+Options=FieldName=new_table.FotPath|TableNameOnly=new_table|FieldNameOnly=FotPath|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap6]
+Options=FieldName=new_table.FotRef|TableNameOnly=new_table|FieldNameOnly=FotRef|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap7]
+Options=FieldName=resistor_smd.Part Number|TableNameOnly=resistor_smd|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap8]
+Options=FieldName=resistor_smd.Description|TableNameOnly=resistor_smd|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap9]
+Options=FieldName=resistor_smd.Library Ref|TableNameOnly=resistor_smd|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap10]
+Options=FieldName=resistor_smd.Library Path|TableNameOnly=resistor_smd|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap11]
+Options=FieldName=resistor_smd.Footprint Ref|TableNameOnly=resistor_smd|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap12]
+Options=FieldName=resistor_smd.Footprint Path|TableNameOnly=resistor_smd|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap13]
+Options=FieldName=resistor_smd_0603.Part Number|TableNameOnly=resistor_smd_0603|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap14]
+Options=FieldName=resistor_smd_0603.Description|TableNameOnly=resistor_smd_0603|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap15]
+Options=FieldName=resistor_smd_0603.Library Ref|TableNameOnly=resistor_smd_0603|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap16]
+Options=FieldName=resistor_smd_0603.Library Path|TableNameOnly=resistor_smd_0603|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap17]
+Options=FieldName=resistor_smd_0603.Footprint Ref|TableNameOnly=resistor_smd_0603|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap18]
+Options=FieldName=resistor_smd_0603.Footprint Path|TableNameOnly=resistor_smd_0603|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0

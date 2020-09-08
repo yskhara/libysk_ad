@@ -19,7 +19,7 @@ LibrarySearchPath=D:\Personal Files\yusaku\Documents\Altium Designer\Library\lib
 OrcadMultiValueDelimiter=,
 SearchSubDirectories=1
 SchemaName=ALTIUM
-LastFocusedTable=misc
+LastFocusedTable=resistor_smd
 [Table1]
 SchemaName=
 TableName=misc
@@ -28,7 +28,7 @@ UserWhere=0
 UserWhereText=
 BrowserOrder_Sorting=
 BrowserOrder_Grouping=
-BrowserOrder_Visible=Part Number0=101|Comment0=80|Description0=138|Library Path0=166|Library Ref0=77|Footprint Path0=177|Footprint Ref0=92|Component Type0=111
+BrowserOrder_Visible=Part Number0=101|Description0=138|Library Path0=166|Library Ref0=77|Footprint Path0=177|Footprint Ref0=92|Comment0=80|Component Type0=111
 [Table2]
 SchemaName=
 TableName=new_table2
@@ -41,6 +41,9 @@ TableName=resistor_smd
 Enabled=True
 UserWhere=0
 UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Part Number0=98|Description0=380|Library Ref0=77|Library Path0=210|Footprint Ref0=92|Footprint Path0=221|Comment0=72|Resistance0=77|Tolerance0=73|Power Rating0=92|Manufacturer 10=102|Voltage Rating0=100|Case/Package0=93|Component Type0=111|Manufacturer Part Number 10=169|Supplier 10=75|SupplierPartNumber 10=136|ComponentLink1 URL0=423|ComponentLink1 Description0=173|Supplier Part Number 10=142
 [Table4]
 SchemaName=
 TableName=resistor_smd_0603

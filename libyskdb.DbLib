@@ -6,9 +6,9 @@ AddMode=3
 RemoveMode=1
 UpdateMode=2
 ViewMode=1
-LeftQuote=[
-RightQuote=]
-QuoteTableNames=0
+LeftQuote=`
+RightQuote=`
+QuoteTableNames=1
 UseTableSchemaName=0
 DefaultColumnType=VARCHAR(255)
 LibraryDatabaseType=
@@ -19,46 +19,46 @@ LibrarySearchPath=D:\Personal Files\yusaku\Documents\Altium Designer\Library\lib
 OrcadMultiValueDelimiter=,
 SearchSubDirectories=1
 SchemaName=ALTIUM
-LastFocusedTable=resistor_smd
+LastFocusedTable=misc
 [Table1]
 SchemaName=
-TableName=new_table
+TableName=misc
 Enabled=True
 UserWhere=0
 UserWhereText=
 BrowserOrder_Sorting=
 BrowserOrder_Grouping=
-BrowserOrder_Visible=PartNo0=58|Comment0=72|SymPath0=210|SymRef0=60|FotPath0=221|FotRef0=57
+BrowserOrder_Visible=Part Number0=101|Comment0=80|Description0=138|Library Path0=166|Library Ref0=77|Footprint Path0=177|Footprint Ref0=92|Component Type0=111
 [Table2]
+SchemaName=
+TableName=new_table2
+Enabled=False
+UserWhere=0
+UserWhereText=
+[Table3]
 SchemaName=
 TableName=resistor_smd
 Enabled=True
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
-BrowserOrder_Grouping=
-BrowserOrder_Visible=Part Number0=98|Description0=380|Library Ref0=77|Library Path0=217|Footprint Ref0=92|Footprint Path0=228|Resistance0=77|Tolerance0=73|Power Rating0=92|Manufacturer 10=102|Voltage Rating0=100|Case/Package0=93|Component Type0=111|Manufacturer Part Number 10=169|Supplier 10=75|Supplier Part Number 10=142|ComponentLink1 URL0=423|ComponentLink1 Description0=173|Comment0=72
-[Table3]
+[Table4]
 SchemaName=
 TableName=resistor_smd_0603
 Enabled=False
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
-BrowserOrder_Grouping=
-BrowserOrder_Visible=Part Number0=98|Description0=380|Resistance0=77|Tolerance0=73|Power Rating0=92|Library Ref0=77|Library Path0=217|Footprint Ref0=92|Footprint Path0=228|Manufacturer 10=102|Voltage Rating0=100|Case/Package0=93|Component Type0=111|Manufacturer Part Number 10=169|Supplier 10=75|Supplier Part Number 10=142|ComponentLink1 URL0=423|ComponentLink1 Description0=173
 [FieldMap1]
-Options=FieldName=new_table.PartNo|TableNameOnly=new_table|FieldNameOnly=PartNo|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+Options=FieldName=misc.Part Number|TableNameOnly=misc|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap2]
-Options=FieldName=new_table.Comment|TableNameOnly=new_table|FieldNameOnly=Comment|FieldType=1|ParameterName=Comment|VisibleOnAdd=True|AddMode=0|RemoveMode=0|UpdateMode=0
+Options=FieldName=misc.Description|TableNameOnly=misc|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap3]
-Options=FieldName=new_table.SymPath|TableNameOnly=new_table|FieldNameOnly=SymPath|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+Options=FieldName=misc.Library Path|TableNameOnly=misc|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap4]
-Options=FieldName=new_table.SymRef|TableNameOnly=new_table|FieldNameOnly=SymRef|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+Options=FieldName=misc.Library Ref|TableNameOnly=misc|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap5]
-Options=FieldName=new_table.FotPath|TableNameOnly=new_table|FieldNameOnly=FotPath|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+Options=FieldName=misc.Footprint Path|TableNameOnly=misc|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap6]
-Options=FieldName=new_table.FotRef|TableNameOnly=new_table|FieldNameOnly=FotRef|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+Options=FieldName=misc.Footprint Ref|TableNameOnly=misc|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap7]
 Options=FieldName=resistor_smd.Part Number|TableNameOnly=resistor_smd|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap8]
@@ -71,15 +71,3 @@ Options=FieldName=resistor_smd.Library Path|TableNameOnly=resistor_smd|FieldName
 Options=FieldName=resistor_smd.Footprint Ref|TableNameOnly=resistor_smd|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap12]
 Options=FieldName=resistor_smd.Footprint Path|TableNameOnly=resistor_smd|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
-[FieldMap13]
-Options=FieldName=resistor_smd_0603.Part Number|TableNameOnly=resistor_smd_0603|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
-[FieldMap14]
-Options=FieldName=resistor_smd_0603.Description|TableNameOnly=resistor_smd_0603|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
-[FieldMap15]
-Options=FieldName=resistor_smd_0603.Library Ref|TableNameOnly=resistor_smd_0603|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
-[FieldMap16]
-Options=FieldName=resistor_smd_0603.Library Path|TableNameOnly=resistor_smd_0603|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
-[FieldMap17]
-Options=FieldName=resistor_smd_0603.Footprint Ref|TableNameOnly=resistor_smd_0603|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
-[FieldMap18]
-Options=FieldName=resistor_smd_0603.Footprint Path|TableNameOnly=resistor_smd_0603|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0

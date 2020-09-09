@@ -21,9 +21,12 @@ NUM_SPHERE = 4
 NUM_TRYSAIL = 3
 
 s = requests.Session()
+table_name = "passive_resistor_smd"
+crsr = None
 
 
 def main():
+    global crsr
     """ エントリポイントだよ。
 
     """
@@ -62,9 +65,16 @@ def main():
     #for row in crsr.fetchall():
     #    print(row)
 
-    table_name = "passive_resistor_smd"
 
-    entry = data["result"]["data"][0]
+    for entry in data["result"]["data"]:
+        add_entry(entry)
+
+    crsr.commit()
+
+    crsr.close()
+    conn.close()
+
+def add_entry(entry):
     part_number = entry["info"]["number"]
     comment = "=Resistance"
     description = entry["description"]
@@ -104,11 +114,10 @@ def main():
 
     print("executing sql query: \r\n    " + sql_add_entry)
 
-    crsr.execute(sql_add_entry)
-    crsr.commit()
-
-    crsr.close()
-    conn.close()
+    try:
+        crsr.execute(sql_add_entry)
+    except pyodbc.IntegrityError:
+        pass
 
 def test_pattern():
     # こんな感じの記述があるはず：

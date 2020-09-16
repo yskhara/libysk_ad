@@ -5,3 +5,4 @@ History
 !/Data/undo_*
 !/Data/mysql.ibd
 !/Data/libysk/
+*.ldb

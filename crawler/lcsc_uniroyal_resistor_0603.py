@@ -206,7 +206,7 @@ def post():
 class MyClass:
 
     def __init__(self):
-        """コンストラクタの説明
+        """ コンストラクタの説明
         """
         self._pv_v = "インスタンス変数"
 

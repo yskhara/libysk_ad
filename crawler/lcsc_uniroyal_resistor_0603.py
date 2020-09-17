@@ -24,25 +24,28 @@ s = requests.Session()
 table_name = "passive_resistor_smd"
 crsr = None
 
+key_part_number = "Part Number"
 
 def main():
     global crsr
-    """ エントリポイントだよ。
+    """ エントリポイント
 
     """
-    logger.debug("mainの開始")
+
+    use_dummy_data = True
 
     data = None
     
     #test_pattern()
 
-    #setup()
-    #data = post()
-
-    path = "sample_response.json"
-    with open(path) as f:
-        json_str = f.read()
-        data = json.loads(json_str)
+    if use_dummy_data:
+        path = "sample_response.json"
+        with open(path) as f:
+            json_str = f.read()
+            data = json.loads(json_str)
+    else:
+        setup()
+        data = post()
     
     #print(json.dumps(data["result"]["data"][0], sort_keys=True, indent=4))
 
@@ -53,10 +56,13 @@ def main():
         r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};'
         r'DBQ=..\passive_resistor.mdb;'
         )
+    pyodbc.pooling = False
     conn = pyodbc.connect(conn_str)
+    conn.autocommit = False
     crsr = conn.cursor()
-    #for table_info in crsr.tables(tableType='TABLE'):
+    #for table_info in crsr.tables():#tableType='TABLE'):
     #    print(table_info.table_name)
+    #    print(table_info.table_type)
 
     #sql_select_all = "select * from passive_resistor_smd"
     #rs = crsr.execute(sql_select_all)
@@ -75,47 +81,53 @@ def main():
     conn.close()
 
 def add_entry(entry):
-    part_number = entry["info"]["number"]
-    comment = "=Resistance"
-    description = entry["description"]
-    manufacturer = entry["manufacturer"]["en"]
-    manufacturer_part_number = "=Part Number"
-    supplier = "LCSC"
-    supplier_part_number = entry["number"]
+    entry_dict = dict()
+
+    entry_dict[key_part_number] = entry["info"]["number"]
+    entry_dict["Comment"] = "=Resistance"
+    entry_dict["Description"] = entry["description"]
+    entry_dict["Manufacturer 1"] = entry["manufacturer"]["en"]
+    entry_dict["Manufacturer Part Number 1"] = "=Part Number"
+    entry_dict["Supplier 1"] = "LCSC"
+    entry_dict["Supplier Part Number 1"] = entry["number"]
     attributes = entry["attributes"]
-    resistance = attributes["Resistance"]
-    tolerance = attributes["Tolerance"]
-    temp_coeff = attributes["Temperature Coefficient"]
-    pow_rating = attributes["Power(Watts)"]
-    volt_rating = "75V"
-    case_pkg = "0603"
-    lib_ref = "Resistor"
-    lib_path = "symbols/passive/passive_resistor.SchLib"
-    fot_ref = "R0603"
-    fot_path = "footprints/passive/passive_resistor.PcbLib"
-    component_type = "Standard"
-    link1url = entry["datasheet"]["pdf"]
-    link1desc = "Datasheet"
-    link2url = "https://lcsc.com" + entry["url"]
-    link2desc = "Supplier Product Page"
+    entry_dict["Resistance"] = attributes["Resistance"]
+    entry_dict["Tolerance"] = attributes["Tolerance"]
+    entry_dict["Temperature Coefficient"] = attributes["Temperature Coefficient"]
+    entry_dict["Power Rating"] = attributes["Power(Watts)"]
+    entry_dict["Voltage Rating"] = "75V"
+    entry_dict["Case/Package"] = "0603"
+    entry_dict["Library Ref"] = "Resistor"
+    entry_dict["Library Path"] = "symbols/passive/passive_resistor.SchLib"
+    entry_dict["Footprint Ref"] = "R0603"
+    entry_dict["Footprint Path"] = "footprints/passive/passive_resistor.PcbLib"
+    entry_dict["Component Type"] = "Standard"
+    entry_dict["ComponentLink1URL"] = entry["datasheet"]["pdf"]
+    entry_dict["ComponentLink1Description"] = "Datasheet"
+    entry_dict["ComponentLink2URL"] = "https://lcsc.com" + entry["url"]
+    entry_dict["ComponentLink2Description"] = "Supplier Product Page"
 
-    sql_add_entry = ("insert into " + table_name + "("
-        "`Part Number`, `Comment`, `Description`, `Manufacturer 1`, `Manufacturer Part Number 1`, "
-        "`Supplier 1`, `Supplier Part Number 1`, `Resistance`, `Tolerance`, `Temperature Coefficient`, "
-        "`Power Rating`, `Voltage Rating`, `Case/Package`, `Library Ref`, `Library Path`, `Footprint Ref`, "
-        "`Footprint Path`, `Component Type`, `ComponentLink1URL`, `ComponentLink1Description`, `ComponentLink2URL`, `ComponentLink2Description`"
-        ") values ("
-        "'" + "', '".join([part_number, comment, description, manufacturer, manufacturer_part_number, supplier, supplier_part_number, 
-        resistance, tolerance, temp_coeff, pow_rating, volt_rating, case_pkg, lib_ref, lib_path, fot_ref, fot_path,
-        component_type, link1url, link1desc, link2url, link2desc]) 
-        + "');"
+    sql_query = "SELECT * FROM " + table_name + " WHERE `" + key_part_number + "` = '" + entry_dict[key_part_number] + "';"
+    
+    crsr.execute(sql_query)
+    #crsr.commit()
+
+    if(len(crsr.fetchall()) != 0):
+        sql_query = ("UPDATE " + table_name + " SET " + 
+        ", ".join(["`" + param + "` = '" + entry_dict[param] + "' " for param in entry_dict if param != key_part_number]) + 
+        "WHERE `" + key_part_number + "` = '" + entry_dict[key_part_number] + "';"
         )
-        
+    else:
+        sql_query = ("INSERT INTO " + table_name + " (`" + "`, `".join(entry_dict.keys()) + "`) "
+        "VALUES ('" + "', '".join(entry_dict.values()) + "');"
+        )
+    
 
-    print("executing sql query: \r\n    " + sql_add_entry)
-
+    print("executing sql query: \r\n" + sql_query)
+    
     try:
-        crsr.execute(sql_add_entry)
+        crsr.execute(sql_query)
+        crsr.commit()
     except pyodbc.IntegrityError:
         pass
 
